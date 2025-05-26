@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    
+  
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #8ab6da;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #8ab6da;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+        }
+
+        h2, h3 {
+            color: #2c3e50;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto 20px;
+            border-radius: 10px;
+            max-width: 100%;
+        }
+
+        select {
+            padding: 10px;
+            width: 100%;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        strong {
+            color: #e74c3c;
+        }
+
+        select:hover {
+            border-color: #007bff;
+        }
+    </style>
+
+    <script>
+        function loadEvent() {
+            var eventPage = document.getElementById("eventSelect").value;
+            if (eventPage) {
+                parent.rightFrame.location.href = eventPage;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <img src="https://images.squarespace-cdn.com/content/v1/5cefcb3ba493330001564f24/1596746936212-6ABO1PHBPI525VS56XWI/upcoming-events.png" alt="Upcoming Events" width="300" height="200">
+
+        
+        <h2>Select an Event</h2>
+        <select id="eventSelect" onchange="loadEvent()">
+            <option value="">-- Choose an Event --</option>
+            <option value="event1.html">Tech Conference 2025</option>
+            <option value="event2.html">Cultural Fest 2025</option>
+            <option value="event4.html">Sports Meet 2025</option>
+        </select>
+
+        <h3>How to Register</h3>
+        <p>To register for an event, simply click on the event name in the list, and you'll be taken to the event details page where you can fill out the registration form.</p>
+
+        <h3>Contact Us</h3>
+        <p>If you have any questions, feel free to reach out to our support team at <strong>support@events.com</strong>.</p>
+    </div>
+</body>
+</html>

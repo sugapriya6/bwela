@@ -1,0 +1,42 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+header {
+  margin: 0px;
+  padding: 0px;
+  background-color: darkcyan;
+  text-align: center;
+}
+.main {
+  margin-top: 60px;
+  width: 40%;
+  margin-left: 30%;
+  font-size: medium;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+  border: 5px solid rgb(177, 168, 168);
+  border-radius: 10px;
+}
+.main input {
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid rgb(129, 119, 119);
+}
+.main button {
+  width: 100px;
+  height: 35px;
+  border: white 3px solid;
+  background-color: red;
+  color: white;
+  border-radius: 30px;
+}
+#cb {
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+}

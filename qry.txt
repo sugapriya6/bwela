@@ -1,0 +1,122 @@
+import javax.servlet.annotation.WebServlet;
+@WebServlet("/register")
+
+javac -cp "C:\sugaDdrive\apache-tomcat-11.0.6\apache-tomcat-11.0.6\lib\servlet-api.jar" RegisterServlet.java
+
+
+
+
+
+ExpenseTracker:
+
+CREATE DATABASE testdb;
+USE testdb;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100)
+);
+select * from users;
+
+drop table users;
+drop table expenses;
+CREATE TABLE expenses (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    date DATE NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    amount DOUBLE NOT NULL,
+    description TEXT
+);
+
+
+select * from expenses;
+
+
+create database student_records;
+use student_records;
+
+create table students(
+id int auto_increment primary key,
+name varchar(225) not null,
+roll_no varchar(20) not null unique,
+department varchar(100) not null,
+year int not null,
+dob date not null,
+email varchar (225) not null);
+
+quiz-app:
+
+create database quizdb;
+use quizdb;
+
+create table users(
+           id int auto_increment primary key,
+          username varchar(20) unique
+          );
+          
+CREATE TABLE questions (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  question TEXT,
+  option_a VARCHAR(100),
+  option_b VARCHAR(100),
+  option_c VARCHAR(100),
+  option_d VARCHAR(100),
+  correct_option CHAR(1)
+);
+
+  insert into questions (question,option_a,option_b,option_c,option_d,correct_option) values
+  ("what is the capital of india","delhi","banglore","mumbai","tamilnadu","A"),
+  ("Which element has the chemical symbol 'O'?", "Oxygen", "Gold", "Osmium", "Iron", "A"),
+("What is the largest ocean on Earth?", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean", "Pacific Ocean", "D"),
+("Who is known as the Father of Computers?", "Charles Babbage", "Alan Turing", "Steve Jobs", "Bill Gates", "A"),
+("What is the capital of Japan?", "Seoul", "Beijing", "Tokyo", "Bangkok", "C"),
+("How many continents are there?", "5", "6", "7", "8", "C"),
+("Which gas do plants absorb from the atmosphere?", "Oxygen", "Carbon Dioxide", "Nitrogen", "Helium", "B"),
+("Which instrument measures temperature?", "Barometer", "Thermometer", "Seismograph", "Altimeter", "B"),
+("Who painted the Mona Lisa?", "Van Gogh", "Michelangelo", "Leonardo da Vinci", "Picasso", "C"),
+("What is the boiling point of water?", "100°C", "90°C", "110°C", "120°C", "A"),
+("Which is the longest river in the world?", "Amazon", "Yangtze", "Mississippi", "Nile", "D"),
+("Which language is used to create web pages?", "HTML", "Python", "C++", "Java", "A"),
+("Which animal is known as the King of the Jungle?", "Tiger", "Elephant", "Lion", "Bear", "C"),
+("Which country hosted the 2020 Olympics?", "Japan", "China", "Brazil", "USA", "A"),
+("Which planet has rings around it?", "Mars", "Earth", "Venus", "Saturn", "D");
+
+select * from questions;
+
+session and cookies in servlet
+
+-- Create Database
+CREATE DATABASE IF NOT EXISTS students_db;
+USE students_db;
+
+-- Create students table
+CREATE TABLE IF NOT EXISTS students (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    age INT,
+    gender VARCHAR(10),
+    department VARCHAR(50),
+    dob VARCHAR(50),
+    district VARCHAR(50),
+    email VARCHAR(100),
+    phone VARCHAR(20),
+    address TEXT
+);
+
+-- Create logs table
+CREATE TABLE IF NOT EXISTS search_logs (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    filter_type VARCHAR(50),
+    filter_value VARCHAR(50),
+    time TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+select * from students;
+
+
+          
+    
+
+
+
