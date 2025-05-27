@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Student Registration Form</title>
+    <style>
+      body {
+        margin: 0px;
+        padding: 0px;
+        background-image: url(https://cdn.pixabay.com/photo/2017/09/06/11/41/clean-2721102_640.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-family: Arial, sans-serif;
+      }
+      header {
+        margin: 0px;
+        padding: 20px 0;
+        background-color: rgb(133, 127, 131);
+        text-align: center;
+        color: white;
+      }
+      .main {
+        width: 40%;
+        margin: 30px auto;
+        font-size: medium;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: black;
+        background-color: rgba(255, 255, 255, 0.9);
+        border: 5px solid rgb(177, 168, 168);
+        border-radius: 10px;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+      .main input,
+      .main select {
+        width: 300px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid rgb(129, 119, 119);
+      }
+      .main button {
+        width: 100px;
+        height: 35px;
+        border: none;
+        background-color: rgb(155, 83, 83);
+        color: white;
+        border-radius: 30px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+      }
+      #cb {
+        width: 18px;
+        height: 18px;
+        margin-right: 5px;
+      }
+      table {
+        width: 100%;
+      }
+      td {
+        padding: 8px;
+      }
+      label {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>Student Registration Form</h1>
+    </header>
+    <div class="main">
+      <form id="registrationForm" novalidate>
+        <table>
+          <tr>
+            <td><label for="na">Name</label></td>
+            <td><input type="text" id="na" placeholder="Enter your name" /></td>
+          </tr>
+          <tr>
+            <td><label for="nu">Roll No</label></td>
+            <td><input type="number" id="nu" placeholder="Enter your number" /></td>
+          </tr>
+          <tr>
+            <td><label for="co">Course</label></td>
+            <td>
+              <select id="co">
+                <option value="">Select Course</option>
+                <option value="CSE">CSE</option>
+                <option value="IT">IT</option>
+                <option value="ECE">ECE</option>
+                <option value="EEE">EEE</option>
+                <option value="E&I">E&I</option>
+                <option value="Mech">Mech</option>
+                <option value="Civil">Civil</option>
+                <option value="IBT">IBT</option>
+                <option value="Prod">Prod</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="ag">Age</label></td>
+            <td><input type="number" id="ag" placeholder="Enter your Age" /></td>
+          </tr>
+          <tr>
+            <td><label for="dob">Date of Birth</label></td>
+            <td><input type="text" id="dob" placeholder="YYYY-MM-DD" /></td>
+          </tr>
+          <tr>
+            <td><label for="em">E-mail</label></td>
+            <td><input type="email" id="em" placeholder="Enter your email" /></td>
+          </tr>
+          <tr>
+            <td><label for="ps">Password</label></td>
+            <td><input type="password" id="ps" placeholder="Enter your Password" /></td>
+          </tr>
+          <tr>
+            <td><label for="num">Phone Number</label></td>
+            <td><input type="number" id="num" placeholder="Enter your Number" /></td>
+          </tr>
+          <tr>
+            <td><label for="gen">Gender</label></td>
+            <td>
+              <select id="gen">
+                <option value="">Select gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><label for="pl">Place</label></td>
+            <td><input type="text" id="pl" placeholder="Enter your place" /></td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: left;">
+              <input type="checkbox" id="cb" />
+              <label for="cb">I agree to the terms and conditions</label>
+            </td>
+          </tr>
+          <tr>
+            <td colspan="2" style="text-align: center;">
+              <button type="submit">Register</button>
+            </td>
+          </tr>
+        </table>
+      </form>
+    </div>
+
+    <script>
+      function validateForm(event) {
+        event.preventDefault();
+
+        const name = document.getElementById("na").value.trim();
+        const rollNo = document.getElementById("nu").value.trim();
+        const course = document.getElementById("co").value;
+        const age = parseInt(document.getElementById("ag").value);
+        const dob = document.getElementById("dob").value.trim();
+        const email = document.getElementById("em").value.trim();
+        const password = document.getElementById("ps").value;
+        const phoneNumber = document.getElementById("num").value.trim();
+        const gender = document.getElementById("gen").value;
+        const place = document.getElementById("pl").value.trim();
+        const terms = document.getElementById("cb").checked;
+
+        const nameRegex = /^[A-Za-z\s]+$/;
+        if (!nameRegex.test(name) || name === "") {
+          alert("Name should only contain letters and spaces and cannot be empty.");
+          return false;
+        }
+
+        if (rollNo === "") {
+          alert("Roll number is required.");
+          return false;
+        }
+
+        if (course === "") {
+          alert("Please select a course.");
+          return false;
+        }
+
+        if (isNaN(age) || age < 18 || age > 45) {
+          alert("Age must be between 18 and 45.");
+          return false;
+        }
+
+        if (dob === "") {
+          alert("Date of Birth is required.");
+          return false;
+        }
+
+        const dobRegex = /^\d{4}-\d{2}-\d{2}$/;
+        if (!dobRegex.test(dob)) {
+          alert("Date of Birth must be in the format YYYY-MM-DD.");
+          return false;
+        }
+
+        if (email === "" || !email.includes("@")) {
+          alert("Please enter a valid email address.");
+          return false;
+        }
+
+        if (password === "") {
+          alert("Password is required.");
+          return false;
+        }
+
+        if (password.length < 8) {
+          alert("Password must be at least 8 characters long.");
+          return false;
+        }
+
+        if (phoneNumber === "") {
+          alert("Phone number is required.");
+          return false;
+        }
+
+        if (isNaN(phoneNumber)) {
+          alert("Phone number must be numeric.");
+          return false;
+        }
+
+        if (phoneNumber.length !== 10) {
+          alert("Phone number must be exactly 10 digits.");
+          return false;
+        }
+
+        if (gender === "") {
+          alert("Gender is required.");
+          return false;
+        }
+
+        if (place === "") {
+          alert("Place is required.");
+          return false;
+        }
+
+        if (!terms) {
+          alert("You must agree to the terms and conditions.");
+          return false;
+        }
+
+        alert("Form submitted successfully!");
+        // You can do form submission or further actions here
+        return true;
+      }
+
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", validateForm);
+    </script>
+  </body>
+</html>

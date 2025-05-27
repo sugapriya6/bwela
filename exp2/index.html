@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Exploration Dashboard</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #572544;
+            color: #e6edf3;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #161b22;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.5);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 32px;
+            color: #58a6ff;
+        }
+
+        p {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            font-size: 18px;
+            text-align: justify;
+        }
+
+        .image-container {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        img {
+            width: 90%;
+            max-width: 1100px;
+            border: 4px solid #30363d;
+            border-radius: 10px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        area {
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            p {
+                font-size: 16px;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1> Space Exploration Dashboard</h1>
+    </header>
+
+    <p>
+        Space exploration is the investigation of outer space through human and robotic missions. It involves studying celestial bodies, understanding cosmic phenomena, and developing technology for interstellar travel.
+        <br><br>
+        Over the years, space agencies like NASA, ESA, and ISRO have launched numerous missions to explore planets, moons, and asteroids. Spacecraft like the Voyager probes, Mars rovers, and the James Webb Telescope have revolutionized our knowledge of the universe.
+        <br><br>
+        With advancements in technology, future missions aim at colonizing Mars, exploring exoplanets, and even interstellar travel. Space tourism is also becoming a reality, making space more accessible to humans than ever before.
+    </p>
+
+    <div class="image-container">
+        <img src="https://www.worldatlas.com/r/w1200/upload/30/a0/3b/shutterstock-1029243295.jpg" usemap="#image_map" alt="Solar System Map" >
+        <map name="image_map">
+            <area alt="jupiter" title="Jupiter" href="jupiter.html" coords="10,71,371,514" shape="rect">
+            <area alt="saturn" title="Saturn" href="saturn.html" coords="381,66,696,586" shape="rect">
+            <area alt="uranus" title="Uranus" href="uranus.html" coords="708,98,891,492" shape="rect">
+            <area alt="neptune" title="Neptune" href="neptune.html" coords="67,78,567,879" shape="rect">
+            
+        </map>
+    </div>
+
+</body>
+</html>
